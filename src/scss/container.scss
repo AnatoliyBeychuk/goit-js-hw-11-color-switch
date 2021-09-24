@@ -1,0 +1,48 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  //   flex-direction: column;
+}
+
+.container a {
+  position: relative;
+  width: 160px;
+  height: 60px;
+  display: inline-block;
+  background: #fff;
+  margin: 20px;
+}
+
+.container a::before,
+.container a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #f00;
+  transition: 0.5s;
+}
+
+.container a:nth-child(1):before,
+.container a:nth-child(1):after {
+  background: linear-gradient(45deg, #00ccff, #0e1538, #0e1538, #d400d4);
+}
+
+.container a:nth-child(2):before,
+.container a:nth-child(2):after {
+  background: linear-gradient(45deg, #ff075b, #0e1538, #0e1538, #1aff22);
+}
+
+.container a:hover::before {
+  inset: -3px;
+}
+
+.container a:hover::after {
+  inset: -3px;
+  filter: blur(10px);
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
